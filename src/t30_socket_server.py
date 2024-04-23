@@ -6,8 +6,8 @@ socket_server = socket.socket()
 socket_server.bind(("localhost", 8886))
 # 监听端口，back_log:允许的链接数量
 socket_server.listen(1)
-# 等待客户端连接, 返回二元元组, accept是（阻塞方法）
 print("服务端已启动：")
+# 等待客户端连接, 返回二元元组, accept是（阻塞方法）
 result = socket_server.accept()
 conn = result[0]    #客户端和服务端的连接对象
 address = result[1] #客户端的地址信息
