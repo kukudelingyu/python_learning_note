@@ -5,7 +5,7 @@ from pyecharts.options import TitleOpts
 from pyecharts.options import VisualMapOpts
 
 try:
-    with open("../data/地图数据/疫情.txt", "r", encoding= "utf-8") as f:
+    with open("../../data/地图数据/疫情.txt", "r", encoding="utf-8") as f:
         json_str = f.read()
         province_list = json.loads(json_str)["areaTree"][0]["children"]
         data = []

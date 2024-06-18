@@ -6,9 +6,9 @@ except:
 """
 
 try:
-    f = open("../data/abc.txt", "r", encoding="utf-8")
+    f = open("../../data/abc.txt", "r", encoding="utf-8")
 except:
-    f = open("../data/abc.txt", "w", encoding="utf-8")
+    f = open("../../data/abc.txt", "w", encoding="utf-8")
 
 """
 捕获指定异常

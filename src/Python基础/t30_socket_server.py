@@ -1,4 +1,10 @@
-import socket
+import socket, threading
+
+def handle_client(conn_socket):
+    data: str = conn.recv(1024).decode("UTF-8")
+    print(f"客户端发来的消息是：{data}")
+    msg = input("你要回复客户端的消息是：")
+    conn.send(msg.encode("UTF-8"))
 
 # 创建socket对象
 socket_server = socket.socket()
@@ -15,12 +21,9 @@ address = result[1] #客户端的地址信息
 print(f"接收到了客户端的连接信息，客户端地址为{address}")
 # 接收客户端的信息，要使用客户端和服务端的连接对象，而不是socket_server，recv的参数是缓冲区大小, 返回的对象是一个字节数组，通过decode转为字符串
 while True:
-    data: str = conn.recv(1024).decode("UTF-8")
-    print(f"客户端发来的消息是：{data}")
-    msg = input("你要回复客户端的消息是：")
-    if msg == "exit":
-        break
-    conn.send(msg.encode("UTF-8"))
+    client_thread = threading.Thread(target=handle_client, args=(conn,))
+    client_thread.start()
+
 # 关闭连接
 conn.close()
 socket_server.close()

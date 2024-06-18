@@ -19,19 +19,19 @@ try:
 
     in_date_list = None
     in_confirm_list = None
-    with open("../data/折线图数据/美国.txt", "r", encoding="utf-8") as f:
+    with open("../../data/折线图数据/美国.txt", "r", encoding="utf-8") as f:
         us_json_string = f.read()
         response = json.loads(us_json_string)
         us_date_list = response["data"][0]["trend"]["updateDate"][:314]
         us_confirm_list = response["data"][0]["trend"]["list"][0]["data"][:314]
 
-    with open("../data/折线图数据/日本.txt", "r", encoding="utf-8") as f:
+    with open("../../data/折线图数据/日本.txt", "r", encoding="utf-8") as f:
         jp_json_string = f.read()
         response = json.loads(jp_json_string)
         jp_date_list = response["data"][0]["trend"]["updateDate"][:314]
         jp_confirm_list = response["data"][0]["trend"]["list"][0]["data"][:314]
 
-    with open("../data/折线图数据/印度.txt", "r", encoding="utf-8") as f:
+    with open("../../data/折线图数据/印度.txt", "r", encoding="utf-8") as f:
         in_json_string = f.read()
         response = json.loads(in_json_string)
         in_date_list = response["data"][0]["trend"]["updateDate"][:314]

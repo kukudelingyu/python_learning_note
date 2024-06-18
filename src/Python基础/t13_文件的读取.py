@@ -26,7 +26,7 @@ readlines() 读取整个文件，返回一个列表，每一行的数据为一�
 #         print(line)
 
 # 写文件
-with open("../data/fileLearning1.txt", "w", encoding="utf-8") as f:
+with open("../../data/fileLearning1.txt", "w", encoding="utf-8") as f:
     f.write("GOSKI APP升级公告")
     # f.flush()
     f.close() # close自带flush

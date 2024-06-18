@@ -1,7 +1,7 @@
 import csv
 
 # 读取csv文件
-with open("../data/score_data.csv") as f:
+with open("../../data/score_data.csv") as f:
     # 用csv库处理数据 返回list[list[str]]
     cf = csv.reader(f)
     # 去除表头
@@ -16,6 +16,6 @@ with open("../data/score_data.csv") as f:
     avg_score = all_socre/len(scores)
     print(f"平均分是：{avg_score}")
 
-with open("../data/score_data.csv", mode="a", encoding="utf-8") as f:
+with open("../../data/score_data.csv", mode="a", encoding="utf-8") as f:
     cf = csv.writer(f)
     cf.writerow(["tom","英语","75.5"])
