@@ -5,11 +5,11 @@
 
 class Check(object):
     def __init__(self, fn):
-        self.fn = fn
+        self._fn = fn
 
     def __call__(self, *args, **kwargs):
         print("登录")
-        self.fn()
+        self._fn()
 
 # c = Check()
 # c()
